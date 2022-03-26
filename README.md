@@ -4,14 +4,17 @@ The master branch of the Git repo is blank, but each branch will have examples o
 
 # Bar Event Example Breakdown
 
-This template is a simple implementation mostly pulled from Wisp's tutorial at https://starsector.fandom.com/wiki/Modding_Quests and from Histidine's assistance.
+This template is a simple implementation mostly pulled from Wisp's tutorial at https://starsector.fandom.com/wiki/Modding_Quests and from Histidine's assistance. It is a single event, not a quest chain, and is relatively bare-bones.
 
 It has the following files:
 
 mod_info.json - All mods must have this.
-ModPluginName.java - mod_info.json labels this as a file that must be called. ModPluginName.java itself, here, is used to initialize all the other scripts that need to run for this bar quest. 
+
 rules.csv - Defines the triggers of a quest. You can use code instead of rules.csv, might do that in another example template.
 
+BarEventCaller - In this template, triggered by rules.csv. Can be called via code.
+
+BarEvent - Called by BarEventCaller. There are good reasons why BarEventCaller and BarEvent are separate classes, detailed in the notes within BarEventCaller.
 
 # Extra notes
 
