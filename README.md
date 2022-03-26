@@ -14,8 +14,6 @@ rules.csv - Defines the triggers of a quest. You can use code instead of rules.c
 
 # Extra notes
 
-You can use bar_events.csv instead of a BarEventCreator file. That's simpler, but supports less possible behavior. I personally prefer to use code instead of .csvs where possible, because starsector seems to always be reliable at hotswapping code files, but is finicky in ways I don't comprehend when reloading .csvs in dev mode. My one exception is using rules.csv, which I find more readable to coworkers than raw code. At least, I find it easier to read rules.csv than something more technically sophisticated like Wisp's Persean Chronicles. Possibly this is due to weak mental on my part.
-
 You can probably make this template compile faster by having it *not* require every dang mod, but this template expansion is designed for "barely familiar with coding at all" levels of experience. 
 
 
