@@ -12,6 +12,7 @@ mod_info.json - All mods must have this.
 ModPluginName.java - mod_info.json labels this as a file that must be called. ModPluginName.java itself, here, is used to initialize all the other scripts that need to run for this bar quest. 
 rules.csv - Defines the triggers of a quest. You can use code instead of rules.csv, might do that in another example template.
 
+
 # Extra notes
 
 You can probably make this template compile faster by having it *not* require every dang mod, but this template expansion is designed for "barely familiar with coding at all" levels of experience. 

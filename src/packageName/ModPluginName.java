@@ -21,8 +21,8 @@ public class ModPluginName extends BaseModPlugin {
 
         // If the prerequisites for the quest have been met (optional) and the game isn't already aware of the bar event,
         // add it to the BarEventManager so that it shows up in bars
-        if (DemoQuestCoordinator.shouldOfferQuest() && !barEventManager.hasEventCreator(DemoBarEventCreator.class)) {
-            barEventManager.addEventCreator(new DemoBarEventCreator());
-        }
+//        if (DemoQuestCoordinator.shouldOfferQuest() && !barEventManager.hasEventCreator(DemoBarEventCreator.class)) {
+//            barEventManager.addEventCreator(new DemoBarEventCreator());
+//        }
     }
 }
