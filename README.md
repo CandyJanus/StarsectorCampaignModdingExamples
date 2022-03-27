@@ -1,3 +1,7 @@
+# DO NOT USE THIS BRANCH, IT DOES NOT WORK
+
+I had an issue where it spawned the bar event exactly once, and after it was dismissed, never again. I then deleted something that seemed apparently redundant without checking what it was, and then permanently broke it. Don't do that. 
+
 # Starsector Mod Examples
 
 The master branch of the Git repo is blank, but each branch will have examples of starsector campaign features to copy. I'd have preferred that this be made by an experienced modder, instead of someone fumbling around trying to figure things out as they do it. It is what it is. For the love of the moon, if you see a problem, and there will be problems I'm not aware of, please leave a comment remarking upon it.
