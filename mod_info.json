@@ -1,13 +1,12 @@
 {
-    "id": "yourName_uniqueid",
-    "name": "starsector-gradle-template",
+    "id": "StarsectorCampaignModdingExamples_BarQuest",
+    "name": "SCME Bar Quest Example",
     "author": "E e",
     "utility": "false",
     "version": { "major":"1", "minor": "0", "patch": "0" },
-    "description": "Bar quest example template. Made by a relative novice out of desperate necessity..",
+    "description": "Bar quest example template. Made by a relative novice out of desperate necessity.",
     "gameVersion": "0.95.1a-RC6",
-    "jars":["jars/starsector-gradle-template.jar"],
-    "modPlugin":"packageName.ModPluginName",
+    "jars":["jars/StarsectorCampaignModdingExamples.jar"],
     "dependencies": [
         {
             "id": "lw_lazylib",
