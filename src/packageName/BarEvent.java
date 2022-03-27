@@ -15,8 +15,6 @@ import com.fs.starfarer.api.impl.campaign.intel.bar.events.BaseBarEventWithPerso
 import java.awt.*;
 import java.util.Map;
 
-
-
 //note: PortsideBarEvent is the most basic event class, and it has a number of implementations, such as BaseBarEventWithPerson and HubMissionWithBarEvent. These can be extended instead of BaseBarEvent. I choose to extend BaseBarEventWithPerson here as it's the most generally useful. Unsurprisingly, it has prebuilt methods for generating characters.
 
 public class BarEvent extends BaseBarEventWithPerson {
@@ -106,7 +104,7 @@ public class BarEvent extends BaseBarEventWithPerson {
                     break;
                 case APOLOGIZE_1:
                     text.addPara("The seal sniffs.");
-                    text.addPara("\"Yeah, I'm alright. Sorry about the trouble.\" "+ getHeOrShe() +" says. \"Life's just been beating me down recently. Don't trouble yourself about it\"" );
+                    text.addPara("\"Yeah, I'm alright. Sorry about the bother.\" "+ getHeOrShe() +" says. \"Life's just been beating me down recently. Don't trouble yourself about it.\"" );
                     options.addOption("Life does not forgive weakness. Punch the seal in the face.", OptionId.DOUBLE_DOWN_1);
                     options.addOption("\"I understand. Life's been hard this cycle..\"", OptionId.APOLOGIZE_2);
                     break;

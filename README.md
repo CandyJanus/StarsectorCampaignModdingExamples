@@ -10,9 +10,9 @@ It has the following files:
 
 mod_info.json - All mods must have this.
 
-BarEvent - This specific bar event spawns a random NPC, changes its gender, and allows for it to be made into a trading contact.
+BarEvent - This specific bar event spawns a random NPC, changes its gender, and allows for it to be made into a trading contact. 
 
-bar_events.csv - Defines the triggers of a bar event. 
+bar_events.csv - Defines the triggers of a bar event. Techpriest has documentation of it here: https://fractalsoftworks.com/forum/index.php?topic=23001.0
 
 # Extra notes
 
