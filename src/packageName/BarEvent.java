@@ -106,7 +106,7 @@ public class BarEvent extends BaseBarEventWithPerson {
                     text.addPara("The seal sniffs.");
                     text.addPara("\"Yeah, I'm alright. Sorry about the bother.\" "+ getHeOrShe() +" says. \"Life's just been beating me down recently. Don't trouble yourself about it.\"" );
                     options.addOption("Life does not forgive weakness. Punch the seal in the face.", OptionId.DOUBLE_DOWN_1);
-                    options.addOption("\"I understand. Life's been hard this cycle..\"", OptionId.APOLOGIZE_2);
+                    options.addOption("\"I understand. Life's been hard this cycle.\"", OptionId.APOLOGIZE_2);
                     break;
                 case APOLOGIZE_2:
                     text.addPara("The seal smiles weakly. \"You're a good one. Bright stars and hard burns to ye.\"");
