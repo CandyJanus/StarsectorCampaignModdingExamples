@@ -11,4 +11,4 @@ public class BarEventCreator extends BaseBarEventCreator {
         return new BarEvent();
     }
 }
-}
+
