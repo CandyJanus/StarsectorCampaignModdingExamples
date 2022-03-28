@@ -23,6 +23,16 @@ BarEvent - This specific bar event spawns a random NPC, changes its gender, and 
 You can probably make this template compile faster by having it *not* require every dang mod, but this template expansion is designed for "barely familiar with coding at all" levels of experience. 
 
 
+# Problems
 
+Currently fighting an issue where the event runs once acceptably, but then on being loaded again, fails to offer any option and only displays the addPara text in INIT of barevent.java. Console gives me:
+____
+
+139529 [Thread-3] INFO  com.fs.starfarer.loading.scripts.B  - Loading class: packageName.BarEvent$OptionId
+139529 [Thread-3] INFO  com.fs.starfarer.loading.scripts.B  - Loading class: packageName.BarEvent$1
+139529 [Thread-3] INFO  com.fs.starfarer.loading.scripts.B  - Loading class: java.lang.NoSuchFieldError
+____
+
+which ain't nice.
 
 
