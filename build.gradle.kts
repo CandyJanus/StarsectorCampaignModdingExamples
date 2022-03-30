@@ -152,7 +152,6 @@ tasks {
                     """
                     version file
                     ${modId}.version
-
                 """.trimIndent()
                 )
             }

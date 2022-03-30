@@ -12,6 +12,5 @@
             "id": "MagicLib",
             "name": "MagicLib"
         }
-    ],
-    "modPlugin":"packageName.modPluginName"
+    ]
 }

@@ -17,7 +17,7 @@ import java.util.Map;
 
 //note: PortsideBarEvent is the most basic event class, and it has a number of implementations, such as BaseBarEventWithPerson and HubMissionWithBarEvent. These can be extended instead of BaseBarEvent. I choose to extend BaseBarEventWithPerson here as it's the most generally useful. Unsurprisingly, it has prebuilt methods for generating characters.
 
-public class BarEvent extends BaseBarEventWithPerson {
+public class BarEventName extends BaseBarEventWithPerson {
 
     //note: This is the list of dialogue options that will be called. They can be arbitrarily named anything at all.
     public static enum OptionId {
@@ -29,7 +29,7 @@ public class BarEvent extends BaseBarEventWithPerson {
     }
 
     //note: planetaryShieldBarEvent declares the repeating superloop. I dunno if one has to, but I do it.
-    public BarEvent() {
+    public BarEventName() {
         super();
     }
 
@@ -64,7 +64,7 @@ public class BarEvent extends BaseBarEventWithPerson {
         // The boolean is for whether to show only minimal person information. True == minimal
         dialog.getVisualPanel().showPersonInfo(person, false);
         // Launch into our event by triggering the "INIT" option, which will call `optionSelected()`
-        optionSelected(null, BarEvent.OptionId.INIT);
+        optionSelected(null, BarEventName.OptionId.INIT);
     }
 
     @Override
@@ -73,7 +73,7 @@ public class BarEvent extends BaseBarEventWithPerson {
             // Clear shown options before we show new ones
             dialog.getOptionPanel().clearOptions();
 
-            BarEvent.OptionId option = (BarEvent.OptionId) optionData;
+            BarEventName.OptionId option = (BarEventName.OptionId) optionData;
 
             OptionPanelAPI options = dialog.getOptionPanel();
             TextPanelAPI text = dialog.getTextPanel();
@@ -95,12 +95,13 @@ public class BarEvent extends BaseBarEventWithPerson {
                     }
                     else{
                         person.setGender(FullName.Gender.FEMALE);
+                        //note: this doesn't check for the Gender.Any case, I couldn't be bothered
                         text.addPara("You've changed this seal from male to female!", Color.red);
                         text.addPara("You punch the weak little creature in the face and turn the flabby thing into a real woman.");
                     }
                     text.addPara("The seal wails again, disoriented by your gender-distorting fist-donation.");
-                    options.addOption("Do it again.", BarEvent.OptionId.DOUBLE_DOWN_1);
-                    options.addOption("Solid hit. There's nothing more to be done here.", BarEvent.OptionId.EXIT);
+                    options.addOption("Do it again.", BarEventName.OptionId.DOUBLE_DOWN_1);
+                    options.addOption("Solid hit. There's nothing more to be done here.", BarEventName.OptionId.EXIT);
                     break;
                 case APOLOGIZE_1:
                     text.addPara("The seal sniffs.");
@@ -113,7 +114,7 @@ public class BarEvent extends BaseBarEventWithPerson {
                     person.setRankId(Ranks.POST_TRADER);
                     person.setImportance(PersonImportance.MEDIUM);
                     person.addTag(Tags.CONTACT_TRADE);
-                    options.addOption("\"You too, friend.\"", BarEvent.OptionId.EXIT);
+                    options.addOption("\"You too, friend.\"", BarEventName.OptionId.EXIT);
                 case EXIT:
                     noContinue=true;
                     done=true;

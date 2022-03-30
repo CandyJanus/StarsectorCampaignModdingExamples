@@ -8,7 +8,7 @@ The master branch of the Git repo is blank, but each branch will have examples o
 
 # Bar Event Example Breakdown
 
-This template is a simple implementation mostly pulled from Wisp's tutorial at https://starsector.fandom.com/wiki/Modding_Quests and from Histidine's assistance. It is a single bar event, not a quest chain, and is relatively bare-bones.
+This template is a simple implementation partially pulled from Wisp's tutorial at https://starsector.fandom.com/wiki/Modding_Quests, from Histidine's assistance, and from vanilla code. It is a single bar event, not a quest chain, and is relatively bare-bones.
 
 It has the following files:
 
@@ -16,6 +16,15 @@ mod_info.json - All mods must have this.
 
 BarEvent - This specific bar event spawns a random NPC, changes its gender, and allows for it to be made into a trading contact. 
 
+BarEventAdderRuleCMD - Calls BarEvent
+
+rules.csv - Calls BarEventAdderRuleCMD
+
+___________
+In order of what activates what:
+
+ rules.csv->BarEventAdderRuleCMD->BarEvent
+___________
 
 
 # Extra notes
