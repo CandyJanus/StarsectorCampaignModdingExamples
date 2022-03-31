@@ -32,7 +32,6 @@ ___________
 
 # Extra notes
 
-You can probably make this template compile faster by having it *not* require every dang mod, but this template expansion is designed for "barely familiar with coding at all" levels of experience. 
 
 
 

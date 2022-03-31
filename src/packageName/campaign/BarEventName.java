@@ -10,6 +10,7 @@ import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.intel.bar.events.BaseBarEventWithPerson;
+import com.fs.starfarer.api.impl.campaign.rulecmd.FireAll;
 
 
 import java.awt.*;
@@ -118,6 +119,9 @@ public class BarEventName extends BaseBarEventWithPerson {
                 case EXIT:
                     noContinue=true;
                     done=true;
+
+                    //note: I think this is necessary to clear indices or something.  I have no idea exactly what it does.
+                    FireAll.fire(null, dialog, memoryMap, "PopulateOptions");
                     break;
             }
         }
