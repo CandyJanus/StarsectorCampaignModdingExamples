@@ -64,8 +64,14 @@ public class BarEventName extends BaseBarEventWithPerson {
 
         // The boolean is for whether to show only minimal person information. True == minimal
         dialog.getVisualPanel().showPersonInfo(person, false);
+
+
+            //note: Had an extremely nasty bug where the event would work once correctly, but then on a second try, would fail to function correctly. Went through various iterations like creating more functioning event but leaving behind defective copies, or having IndexOutOfBoundsError 2 of 2 because it didn't clear the previous event or something.
+            //note: The following lines in this init function are from Histidine, to bugfix the issue.
+
         // Launch into our event by triggering the "INIT" option, which will call `optionSelected()`
-        optionSelected(null, BarEventName.OptionId.INIT);
+        super.init(dialog, memoryMap);
+        done = false; // this is the important part, it resets the bar event state so it doesn't end immediately after
     }
 
     @Override
