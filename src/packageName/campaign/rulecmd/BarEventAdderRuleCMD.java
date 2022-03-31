@@ -5,7 +5,7 @@ import com.fs.starfarer.api.impl.campaign.intel.bar.BarEventDialogPlugin;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.BarCMD;
 import com.fs.starfarer.api.util.Misc;
-import packageName.campaign.barEventsFolder.BarEventName;
+import packageName.campaign.BarEventName;
 
 import java.util.List;
 import java.util.Map;

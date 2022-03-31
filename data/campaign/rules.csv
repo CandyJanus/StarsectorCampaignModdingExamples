@@ -1,4 +1,4 @@
 id,trigger,conditions,script,text,options,notes
 #BarEventExampleComment,,,,,,
-BarThingHappening,AddBarEvents,$faction.id == independent,"AddBarEvent testBarEvent_selected ""Example text of some kind"" ""Example text of some other kind""",,,
-testBarEvent_selected ,DialogOptionSelected,$option == vicRepeatingBarEvent1_selected,BarEventAdderRuleCMD,,,
+BarThingHappening,AddBarEvents,$faction.id == independent,"AddBarEvent testBarEvent_selected ""Example option menu text."" ",,,
+testBarEvent_selected ,DialogOptionSelected,$option == testBarEvent_selected ,BarEventAdderRuleCMD,,,
