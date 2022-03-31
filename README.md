@@ -1,6 +1,3 @@
-# DO NOT USE THIS BRANCH, IT DOES NOT WORK
-
-I had an issue where it spawned the bar event exactly once, and after it was dismissed, never again. I then deleted something that seemed apparently redundant without checking what it was, and then permanently broke it. Don't do that. 
 
 # Starsector Mod Examples
 
@@ -14,16 +11,22 @@ It has the following files:
 
 mod_info.json - All mods must have this.
 
+settings.json - Specify where your scripts for rules.csv are stored. I have wasted embarrassing amounts of time because I've forgotten you need to do this.
+
 BarEvent - This specific bar event spawns a random NPC, changes its gender, and allows for it to be made into a trading contact. 
 
-BarEventAdderRuleCMD - Calls BarEvent
+BarEventAdderRuleCMD - Calls BarEvent.
 
-rules.csv - Calls BarEventAdderRuleCMD
+rules.csv - Calls BarEventAdderRuleCMD.
+
+bar_events.csv - Regulates how frequently rules.csv calls the listed event. Optional file. 
 
 ___________
 In order of what activates what:
 
  rules.csv->BarEventAdderRuleCMD->BarEvent
+
+
 ___________
 
 
@@ -32,16 +35,6 @@ ___________
 You can probably make this template compile faster by having it *not* require every dang mod, but this template expansion is designed for "barely familiar with coding at all" levels of experience. 
 
 
-# Problems
 
-Currently fighting an issue where the event runs once acceptably, but then on being loaded again, fails to offer any option and only displays the addPara text in INIT of barevent.java. Console gives me:
-____
-
-139529 [Thread-3] INFO  com.fs.starfarer.loading.scripts.B  - Loading class: packageName.BarEvent$OptionId
-139529 [Thread-3] INFO  com.fs.starfarer.loading.scripts.B  - Loading class: packageName.BarEvent$1
-139529 [Thread-3] INFO  com.fs.starfarer.loading.scripts.B  - Loading class: java.lang.NoSuchFieldError
-____
-
-which ain't nice.
 
 

@@ -1,4 +1,4 @@
-package packageName;
+package packageName.campaign.barEventsFolder;
 
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.OptionPanelAPI;
