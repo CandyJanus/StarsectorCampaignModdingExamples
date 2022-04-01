@@ -64,7 +64,14 @@ public class BarEvent extends BaseBarEventWithPerson {
         // The boolean is for whether to show only minimal person information. True == minimal
         dialog.getVisualPanel().showPersonInfo(person, false);
         // Launch into our event by triggering the "INIT" option, which will call `optionSelected()`
-        optionSelected(null, BarEvent.OptionId.INIT);
+        //optionSelected(null, BarEvent.OptionId.INIT);
+        done =false;
+    }
+
+    // Makes the bar event always show (e.g. when normally it would be crowded out)
+    @Override
+    public boolean isAlwaysShow() {
+        return true;
     }
 
     @Override
