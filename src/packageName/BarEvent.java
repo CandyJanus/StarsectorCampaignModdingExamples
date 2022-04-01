@@ -1,4 +1,4 @@
-package org.histidine.testmod.intel.bar;
+package packageName;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;

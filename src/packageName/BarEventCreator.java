@@ -8,7 +8,7 @@ public class BarEventCreator extends BaseBarEventCreator {
     //note: Make sure your method returns the type of event that your bar event is extending.
     @Override
     public BaseBarEventWithPerson createBarEvent() {
-        return new BarEvent();
+        return new packageName.BarEvent();
     }
 }
 
