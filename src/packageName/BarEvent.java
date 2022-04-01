@@ -52,9 +52,9 @@ public class BarEvent extends BaseBarEventWithPerson {
     @Override
     public void init(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) {
         super.init(dialog, memoryMap);
-
+        
         done = false;
-
+        
         // The boolean is for whether to show only minimal person information. True == minimal
         dialog.getVisualPanel().showPersonInfo(person, false);
         // Launch into our event by triggering the "INIT" option, which will call `optionSelected()`
@@ -112,10 +112,10 @@ public class BarEvent extends BaseBarEventWithPerson {
             }
         }
     }
-
-    // Makes the bar event always show (e.g. when normally it would be crowded out)
-    @Override
-    public boolean isAlwaysShow() {
-        return true;
-    }
+	
+	// Makes the bar event always show (e.g. when normally it would be crowded out)
+	@Override
+	public boolean isAlwaysShow() {
+		return true;
+	}
 }
