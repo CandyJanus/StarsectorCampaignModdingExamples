@@ -35,4 +35,6 @@ ____
 
 which ain't nice.
 
+___
 
+Okay, when you try to call a bar event through modplugins, and you also have it listed in bar_events.csv, it bugs the fuck out and shows two entries, as well as duplicating itself after you click on it. I do not understand how bar_events.csv works and I never want to touch it again. 
