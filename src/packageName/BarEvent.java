@@ -1,17 +1,14 @@
-package packageName;
+package org.histidine.testmod.intel.bar;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
-import com.fs.starfarer.api.campaign.OptionPanelAPI;
 import com.fs.starfarer.api.campaign.PersonImportance;
-import com.fs.starfarer.api.campaign.TextPanelAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.intel.bar.events.BaseBarEventWithPerson;
-
-
 import java.awt.*;
 import java.util.Map;
 
@@ -26,11 +23,6 @@ public class BarEvent extends BaseBarEventWithPerson {
         APOLOGIZE_2,
         DOUBLE_DOWN_1,
         EXIT,
-    }
-
-    //note: planetaryShieldBarEvent declares the repeating superloop. I dunno if one has to, but I do it.
-    public BarEvent() {
-        super();
     }
 
     public boolean shouldShowAtMarket(MarketAPI market) {
@@ -61,33 +53,24 @@ public class BarEvent extends BaseBarEventWithPerson {
     public void init(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) {
         super.init(dialog, memoryMap);
 
+        done = false;
+
         // The boolean is for whether to show only minimal person information. True == minimal
         dialog.getVisualPanel().showPersonInfo(person, false);
         // Launch into our event by triggering the "INIT" option, which will call `optionSelected()`
-        //optionSelected(null, BarEvent.OptionId.INIT);
-        done =false;
-    }
-
-    // Makes the bar event always show (e.g. when normally it would be crowded out)
-    @Override
-    public boolean isAlwaysShow() {
-        return true;
+        optionSelected(null, BarEvent.OptionId.INIT);
     }
 
     @Override
     public void optionSelected(String optionText, Object optionData) {
         if (optionData instanceof OptionId) {
             // Clear shown options before we show new ones
-            dialog.getOptionPanel().clearOptions();
-
-            BarEvent.OptionId option = (BarEvent.OptionId) optionData;
-
-            OptionPanelAPI options = dialog.getOptionPanel();
-            TextPanelAPI text = dialog.getTextPanel();
             options.clearOptions();
+            BarEvent.OptionId option = (BarEvent.OptionId) optionData;
 
             // Handle all possible options the player can choose
             //note: It's not strictly necessary to use a switch function. It's just usually easier.
+            Global.getLogger(this.getClass()).info(String.format("Done %s, nocontinue %s", done, noContinue));
             switch(option){
                 case INIT:
                     text.addPara("The seal unleashes an unholy wail.");
@@ -121,11 +104,18 @@ public class BarEvent extends BaseBarEventWithPerson {
                     person.setImportance(PersonImportance.MEDIUM);
                     person.addTag(Tags.CONTACT_TRADE);
                     options.addOption("\"You too, friend.\"", BarEvent.OptionId.EXIT);
+                    break;
                 case EXIT:
                     noContinue=true;
                     done=true;
                     break;
             }
         }
+    }
+
+    // Makes the bar event always show (e.g. when normally it would be crowded out)
+    @Override
+    public boolean isAlwaysShow() {
+        return true;
     }
 }
