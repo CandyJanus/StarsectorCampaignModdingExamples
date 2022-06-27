@@ -11,16 +11,30 @@ public class ModPluginName extends BaseModPlugin {
 
     private static org.apache.log4j.Logger log = Global.getLogger(ModPluginName.class);
 
-
     public void onNewGame(boolean newGame) {
+        Global.getSector().addScript(new ShipDescChanger(true));
     }
-
 
     @Override
     public void onGameLoad(boolean newGame) {
         super.onGameLoad(newGame);
 
-        //Global.getSector().addTransientScript(new ShipDescChanger());
+        int num;
+        Map<String, Object> data = Global.getSector().getPersistentData();
+        if(data!=null)
+        {
+            if(!data.containsKey("number_of_times_game_loaded"))
+            {
+                data.put("number_of_times_game_loaded",0);
+            }
+            else{
+                num=(int)data.get("number_of_times_game_loaded");
+                num++;
+                data.put("number_of_times_game_loaded",num);
+            }
+            num=(int)data.get("number_of_times_game_loaded");
+            log.info("This save has been loaded " + num + " times.");
+        }
     }
 
     /**
