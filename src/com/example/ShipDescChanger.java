@@ -25,9 +25,9 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import java.util.Iterator;
 import org.apache.log4j.Logger;
-
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
+//
+//import com.opencsv.CSVReader;
+//import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -38,8 +38,8 @@ import java.util.*;
 
 public class ShipDescChanger extends BaseCampaignEventListener implements EveryFrameScript{
 
-    public static final List<DescUpdateEntry> BASE_DESCRIPTIONS = new ArrayList<>();
-    public static final Map<String, List<DescUpdateEntry>> DESCRIPTIONS_BY_ENTITY_ID = new HashMap<>();
+//    public static final List<DescUpdateEntry> BASE_DESCRIPTIONS = new ArrayList<>();
+//    public static final Map<String, List<DescUpdateEntry>> DESCRIPTIONS_BY_ENTITY_ID = new HashMap<>();
     public static final String CSV_PATH = "data/config/list_of_changed_descriptions.csv";
 
     public static Logger log = Global.getLogger(ShipDescChanger.class);
@@ -108,19 +108,19 @@ public class ShipDescChanger extends BaseCampaignEventListener implements EveryF
 //            }
 //        }
 //    }
-
-    public static class DescUpdateEntry {
-        public final String entityId;
-        public final String descId;
-        public final boolean isDefault;
-
-        public DescUpdateEntry(String entityId, String descId, boolean isDefault)
-        {
-            this.entityId=entityId;
-            this.descId = descId;
-            this.isDefault = isDefault;
-        }
-    }
+//
+//    public static class DescUpdateEntry {
+//        public final String entityId;
+//        public final String descId;
+//        public final boolean isDefault;
+//
+//        public DescUpdateEntry(String entityId, String descId, boolean isDefault)
+//        {
+//            this.entityId=entityId;
+//            this.descId = descId;
+//            this.isDefault = isDefault;
+//        }
+//    }
 
     @Override
     public boolean isDone() {

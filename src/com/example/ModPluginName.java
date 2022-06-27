@@ -4,6 +4,7 @@ import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.thoughtworks.xstream.XStream;
 import data.scripts.sevencorp_ModPlugin;
+import sun.rmi.runtime.Log;
 
 import java.util.Map;
 
@@ -12,29 +13,39 @@ public class ModPluginName extends BaseModPlugin {
     private static org.apache.log4j.Logger log = Global.getLogger(ModPluginName.class);
 
     public void onNewGame(boolean newGame) {
-        Global.getSector().addScript(new ShipDescChanger(true));
+//        Global.getSector().addScript(new ShipDescChanger(true));
     }
 
     @Override
     public void onGameLoad(boolean newGame) {
         super.onGameLoad(newGame);
 
-        int num;
-        Map<String, Object> data = Global.getSector().getPersistentData();
-        if(data!=null)
-        {
-            if(!data.containsKey("number_of_times_game_loaded"))
-            {
-                data.put("number_of_times_game_loaded",0);
-            }
-            else{
-                num=(int)data.get("number_of_times_game_loaded");
-                num++;
-                data.put("number_of_times_game_loaded",num);
-            }
-            num=(int)data.get("number_of_times_game_loaded");
-            log.info("This save has been loaded " + num + " times.");
+//        Global.getSector().addTransientScript(saver);
+//        Global.getSector().addTransientListener(saver);
+//        Log.debug("Added autosaver to sector");
+//
+//        int num;
+//        Map<String, Object> data = Global.getSector().getPersistentData();
+//        if(data!=null)
+//        {
+//            if(!data.containsKey("number_of_times_game_loaded"))
+//            {
+//                data.put("number_of_times_game_loaded",0);
+//            }
+//            else{
+//                num=(int)data.get("number_of_times_game_loaded");
+//                num++;
+//                data.put("number_of_times_game_loaded",num);
+//            }
+//            num=(int)data.get("number_of_times_game_loaded");
+//            log.info("This save has been loaded " + num + " times.");
         }
+    }
+
+    @Override
+    public void afterGameSave()
+    {
+//        saver.resetTimeSinceLastSave();
     }
 
     /**
