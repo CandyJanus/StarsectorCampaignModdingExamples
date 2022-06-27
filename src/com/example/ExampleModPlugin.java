@@ -3,18 +3,39 @@ package com.example;
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.thoughtworks.xstream.XStream;
+import data.scripts.sevencorp_ModPlugin;
+
+import java.util.Map;
 
 public class ExampleModPlugin extends BaseModPlugin {
+
+    private static org.apache.log4j.Logger log = Global.getLogger(ExampleModPlugin.class);
 
     @Override
     public void onGameLoad(boolean newGame) {
         super.onGameLoad(newGame);
+        int num;
+        Map<String, Object> data = Global.getSector().getPersistentData();
+        if(data!=null)
+        {
+            if(!data.containsKey("number_of_times_game_loaded"))
+            {
+                data.put("number_of_times_game_loaded",0);
+            }
+            else{
+                num=(int)data.get("number_of_times_game_loaded");
+                num++;
+                data.put("number_of_times_game_loaded",num);
+            }
+            num=(int)data.get("number_of_times_game_loaded");
+            log.info("This save has been loaded " + num + " times.");
+        }
 
         // Example only.
         // This does nothing and can be deleted.
-        if (Global.getSettings().isDevMode()) {
-            Global.getSector().addTransientScript(new ExampleEveryFrameScript());
-        }
+//        if (Global.getSettings().isDevMode()) {
+//            Global.getSector().addTransientScript(new ExampleEveryFrameScript());
+//        }
     }
 
     /**
