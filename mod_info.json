@@ -1,13 +1,13 @@
 {
-    "id": "yourName_uniqueid",
-    "name": "starsector-gradle-template",
+    "id": "desc_changer_wm_thing",
+    "name": "desc changer thingie",
     "author": "Your Name",
     "utility": "false",
     "version": { "major":"1", "minor": "0", "patch": "0" },
     "description": "Mod description.",
     "gameVersion": "0.95.1a-RC6",
-    "jars":["jars/starsector-gradle-template.jar"],
-    "modPlugin":"com.example.ExampleModPlugin",
+    "jars":["jars/StarsectorCampaignModdingExamples.jar"],
+    "modPlugin":"com.example.ModPluginName",
     "dependencies": [
         {
             "id": "lw_lazylib",

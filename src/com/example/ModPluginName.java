@@ -3,18 +3,24 @@ package com.example;
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.thoughtworks.xstream.XStream;
+import data.scripts.sevencorp_ModPlugin;
 
-public class ExampleModPlugin extends BaseModPlugin {
+import java.util.Map;
+
+public class ModPluginName extends BaseModPlugin {
+
+    private static org.apache.log4j.Logger log = Global.getLogger(ModPluginName.class);
+
+
+    public void onNewGame(boolean newGame) {
+    }
+
 
     @Override
     public void onGameLoad(boolean newGame) {
         super.onGameLoad(newGame);
 
-        // Example only.
-        // This does nothing and can be deleted.
-        if (Global.getSettings().isDevMode()) {
-            Global.getSector().addTransientScript(new ExampleEveryFrameScript());
-        }
+        //Global.getSector().addTransientScript(new ShipDescChanger());
     }
 
     /**
