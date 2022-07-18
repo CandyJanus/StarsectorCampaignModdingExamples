@@ -6,13 +6,18 @@ import com.thoughtworks.xstream.XStream;
 import data.scripts.sevencorp_ModPlugin;
 import sun.rmi.runtime.Log;
 
+import java.io.IOException;
 import java.util.Map;
 
 public class ModPluginName extends BaseModPlugin {
 
     private static org.apache.log4j.Logger log = Global.getLogger(ModPluginName.class);
 
-    public void onNewGame(boolean newGame) {
+    public void onApplicationLoad() throws IOException {
+        csvModifier.main();
+    }
+
+    public void onNewGame(boolean newGame) throws IOException {
 //        Global.getSector().addScript(new ShipDescChanger(true));
     }
 
@@ -39,8 +44,8 @@ public class ModPluginName extends BaseModPlugin {
 //            }
 //            num=(int)data.get("number_of_times_game_loaded");
 //            log.info("This save has been loaded " + num + " times.");
-        }
-    }
+//        }
+      }
 
     @Override
     public void afterGameSave()

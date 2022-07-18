@@ -1,3 +1,19 @@
+#project cancelled
+
+starsector doesn't allow file access by modders using outside libraries
+
+
+
+
+
+
+
+# Overall Objective
+
+Be able to dynamically modify ship descriptions in an in-progress game, not just from statically loaded preset descriptions, but according to events that occur in game. 
+
+
+
 # Working Notes
 
 Ships do *not* have a setCustomDescriptionID method. I think we can work around that by modifying the csv directly and trying hacky shit to directly refresh the CSV use. 
@@ -25,6 +41,10 @@ Options for proceeding, ranked in terms of preferability:
 Let's bugtest the final solution first. Following the example of Autosave, we will simply use robot.keypress to manually override SS and force it to save and then reload. 
 
 
+__
 
+Plans for imitating Nex interfacing with all mods seem questionable. With ships, one would need to invasively change descriptions belonging to vanilla and other mods, which is simply a bad idea waiting for trouble. 
+
+However, I DO know that repeated csvs are ignored. If I load this mod first by manipulating the modid, it's possible that I can override the descriptions of vanilla and other mods without touching their files at all. I'm a little bit leery of trying this method because it could be repurposed to fuck with people, but such fuckery would be readily detectable, which balances things out.
 
 
